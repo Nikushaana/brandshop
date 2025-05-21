@@ -57,17 +57,17 @@ export default function ProductContent2({ itemId }: any) {
 
   const [isLoaderEach, setIsLoaderEach] = useState<boolean>(true);
 
-  useEffect(() => {
-    setIsLoaderEach(true);
-    axiosClient
-      .get(`front/product/${itemId}`)
-      .then((res) => {
-        setinEachProdData(res.data);
-        setIsLoaderEach(false);
-      })
-      .catch((error) => {})
-      .finally(() => {});
-  }, [itemId]);
+  // useEffect(() => {
+  //   setIsLoaderEach(true);
+  //   axiosClient
+  //     .get(`front/product/${itemId}`)
+  //     .then((res) => {
+  //       setinEachProdData(res.data);
+  //       setIsLoaderEach(false);
+  //     })
+  //     .catch((error) => {})
+  //     .finally(() => {});
+  // }, [itemId]);
 
   // quantity
 
@@ -98,66 +98,67 @@ export default function ProductContent2({ itemId }: any) {
     }, 3000);
   };
 
-  useEffect(() => {
-    if (localCartProdKeyData.find((itemdd: any) => itemdd.id == colorId)) {
-      setAddedProd(true);
-    } else {
-      setAddedProd(false);
-    }
-  }, [cartData, colorId, localCartProdKeyData, setAddedProd]);
+  // useEffect(() => {
+  //   if (localCartProdKeyData.find((itemdd: any) => itemdd.id == colorId)) {
+  //     setAddedProd(true);
+  //   } else {
+  //     setAddedProd(false);
+  //   }
+  // }, [cartData, colorId, localCartProdKeyData, setAddedProd]);
 
   return (
     <div className="flex flex-col gap-y-[70px] ">
-      {isLoaderEach ? (
+      {/* {isLoaderEach ? (
         <div className="w-full h-[620px] max-md:h-[400px] max-lg:w-full flex items-center justify-center">
           <div className="flex flex-col gap-y-[10px]">
             <Loader1 />
             <p>იტვირთება..</p>
           </div>
         </div>
-      ) : (
+      ) : ( */}
         <div className="w-[100%] gap-[40px] flex justify-between max-lg:flex-col">
           <div className="w-[50%] h-[620px] max-md:h-[400px] max-lg:w-full">
             <ProdInSlider2
-              inEachProdData={inEachProdData}
-              activeColor_imgs={activeColor_imgs}
+              // inEachProdData={inEachProdData}
+              // activeColor_imgs={activeColor_imgs}
             />
           </div>
 
           <div className="w-[50%] max-lg:w-full flex flex-col gap-[20px] ">
             <div className="flex flex-col gap-y-[30px] max-lg:gap-y-[10px]">
               <h1 className="text-[24px] font-semibold">
-                {inEachProdData?.name}
+                {/* {inEachProdData?.name} */}
+                მოსაცმელი
               </h1>
               <div className="flex items-center gap-[20px]">
                 <div className="flex items-end gap-[5px]">
                   <h1 className="text-[30px] h-[39px]">
-                    ₾
-                    {inEachProdData?.discount_price
+                    ₾80
+                    {/* {inEachProdData?.discount_price
                       ? inEachProdData?.discount_price
-                      : inEachProdData?.price}
+                      : inEachProdData?.price} */}
                   </h1>
-                  {inEachProdData?.discount_price && (
+                  {/* {inEachProdData?.discount_price && ( */}
                     <h1 className="text-[16px] line-through text-[red] ">
-                      ₾
-                      {inEachProdData?.discount_price
+                      ₾150
+                      {/* {inEachProdData?.discount_price
                         ? inEachProdData?.price
-                        : inEachProdData?.discount_price}
+                        : inEachProdData?.discount_price} */}
                     </h1>
-                  )}
+                  {/* )} */}
                 </div>
 
-                {inEachProdData?.discount_percent && (
+                {/* {inEachProdData?.discount_percent && ( */}
                   <div className="bg-[red] shadow text-white h-[30px] px-[10px] text-[14px] flex items-center rounded-[3px]">
-                    -{inEachProdData?.discount_percent}%
+                    {/* -{inEachProdData?.discount_percent}% */}-25%
                   </div>
-                )}
+                {/* )} */}
               </div>
 
               <div className="flex flex-col gap-[10px]">
-                <p>ფერი: </p>
+                <p>ფერი: ყავისფერი</p>
                 <div className="flex items-center gap-[10px]">
-                  {inEachProdData?.imgs_color.map((item1: any, index: any) => (
+                  {/* {inEachProdData?.imgs_color.map((item1: any, index: any) => (
                     <div
                       key={item1.id}
                       className={` rounded-full duration-100 w-[45px] h-[25px] shadow ${
@@ -174,11 +175,12 @@ export default function ProductContent2({ itemId }: any) {
                         className={`${item1.color_code} w-full h-full flex items-center justify-center rounded-full cursor-pointer `}
                       ></div>
                     </div>
-                  ))}
+                  ))} */}
                 </div>
               </div>
               <p className="line-clamp-1 text-[14px] text-gray-500">
-                ზომა: {inEachProdData?.product_sizes}
+                ზომა: 42
+                {/* {inEachProdData?.product_sizes} */}
               </p>
 
               <div className="flex flex-col gap-[20px]">
@@ -221,14 +223,17 @@ export default function ProductContent2({ itemId }: any) {
             </div>
           </div>
         </div>
-      )}
+      {/* )} */}
 
-      {!isLoaderEach && (
+      {/* {!isLoaderEach && ( */}
         <div className="flex flex-col gap-y-[10px]">
           <h1>პროდუქტის აღწერა</h1>
-          <p>{inEachProdData?.description}</p>
+          <p>
+            პროდუქტს მოგაწვდით შეძენიდან 2 კვირაში
+            {/* {inEachProdData?.description} */}
+            </p>
         </div>
-      )}
+      {/* )} */}
     </div>
   );
 }

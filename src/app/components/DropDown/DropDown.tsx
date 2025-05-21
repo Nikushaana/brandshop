@@ -76,7 +76,7 @@ export default function DropDown({
       </div>
       <div
         style={{
-          height: drop ? (data?.length >= 3 ? 180 : data.length * 60) : 0,
+          height: drop ? (data?.length >= 3 ? 180 : data?.length * 60) : 0,
         }}
         className={`absolute z-[3] top-[45px] bg-white w-full flex flex-col rounded-[8px] shadow-md duration-150  ${
           drop

@@ -56,13 +56,15 @@ export default function ProdSlider2({ productInfo, title }: any) {
         }}
         speed={1200}
       >
-        {productInfo.data?.map((item: any) => (
-          <SwiperSlide key={item.id}>
-            <CardStyle1 item={item} slider={true} />
+        {/* {productInfo.data?.map((item: any) => ( */}
+          {[1,2,3,4,5,6].map((item)=>(
+          <SwiperSlide key={item}>
+            <CardStyle1 slider={true} />
           </SwiperSlide>
-        ))}
+          ))}
+        {/* ))} */}
       </Swiper>
-      {productInfo.data?.length > 4 && (
+      {/* {productInfo.data?.length > 4 && ( */}
         <div className="flex gap-[10px] items-center max-md:hidden">
           <button
             className={`absolute top-[50%] translate-y-[-50%] left-[20px] z-[2] w-[60px] h-[40px] flex items-center justify-center text-[22px] bg-white hover:shadow-md duration-150 border-[1px] rounded-full`}
@@ -78,7 +80,7 @@ export default function ProdSlider2({ productInfo, title }: any) {
             <BiChevronRight className="" />
           </button>
         </div>
-      )}
+      {/* )} */}
     </div>
   );
 }

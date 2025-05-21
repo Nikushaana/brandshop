@@ -184,10 +184,10 @@ export default function ProdSlider({ title }: any) {
         </div>
 
         <p className="text-[14px]">
-          მოიძებნა {prodwholenum ? prodwholenum : 0}
+          მოიძებნა {prodwholenum ? prodwholenum : 10}
         </p>
 
-        {ProductsLoaderMain ? (
+        {/* {ProductsLoaderMain ? (
           <div className="h-[270px] flex flex-col items-center justify-center gap-y-[20px] rounded-[15px] ">
             <Loader1 />
             იძებნება სამოსი..
@@ -204,7 +204,19 @@ export default function ProdSlider({ title }: any) {
               </div>
             )}
           </div>
-        )}
+        )} */}
+        <div className="grid grid-cols-5 max-xl:grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-2 max-tiny:grid-cols-1 gap-[30px] ">
+          <CardStyle1 />
+          <CardStyle1 />
+          <CardStyle1 />
+          <CardStyle1 />
+          <CardStyle1 />
+          <CardStyle1 />
+          <CardStyle1 />
+          <CardStyle1 />
+          <CardStyle1 />
+          <CardStyle1 />
+        </div>
         {prodwholenum > 20 && (
           <div className="py-[50px] flex justify-center">
             <ReactPaginate

@@ -147,7 +147,7 @@ export default function Counter({
   }, [foundItem?.quantity, isincart?.quantity, setQuantityValue]);
 
   return (
-    <div className="flex items-center gap-[3px]">
+    <div className="flex items-center gap-[3px] pointer-events-none">
       <p
         className="bg-gray-300 hover:bg-gray-400 hover:shadow hover:shadow-gray-400 duration-100 w-[30px] select-none h-[30px] rounded-full flex items-center justify-center cursor-pointer"
         onClick={() => {
